@@ -73,7 +73,7 @@ define wordpress::instance::app (
   }
   -> exec { "Extract wordpress ${install_dir}":
     command => "tar zxvf ./wordpress-${version}.tar.gz --strip-components=1",
-    creates => "${install_dir}/index.php",
+    creates => "${install_dir}/license.txt",
     user    => $wp_owner,
     group   => $wp_group,
   }
